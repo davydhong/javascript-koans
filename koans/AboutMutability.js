@@ -11,7 +11,7 @@ describe("About Mutability", function() {
     function Person(firstname, lastname)
     {
       this.firstname = firstname;
-      this.lastname  = lastname;
+      this.lastname = lastname;
     }
     var aPerson = new Person ("John", "Smith");
     aPerson.firstname = "Alan";
@@ -25,14 +25,14 @@ describe("About Mutability", function() {
       this.firstname = firstname;
       this.lastname = lastname;
     }
-    Person.prototype.getFullName = function() {
+    Person.prototype.getFullName = function () {
       return this.firstname + " " + this.lastname;
     };
     
     var aPerson = new Person ("John", "Smith");
     expect(aPerson.getFullName()).toBe(FILL_ME_IN);
     
-    aPerson.getFullName = function() {
+    aPerson.getFullName = function () {
       return this.lastname + ", " + this.firstname;
     };
     
@@ -44,21 +44,21 @@ describe("About Mutability", function() {
     {
       var fullName = firstname + " " + lastname;
       
-      this.getFirstName = function() { return firstname; };
-      this.getLastName  = function() { return lastname; };
-      this.getFullName  = function() { return fullName; };
+      this.getFirstName = function () { return firstname; };
+      this.getLastName = function () { return lastname; };
+      this.getFullName = function () { return fullName; };
     }
     var aPerson = new Person ("John", "Smith");
 
     aPerson.firstname = "Penny";
-    aPerson.lastname  = "Andrews";
-    aPerson.fullName  = "Penny Andrews";
+    aPerson.lastname = "Andrews";
+    aPerson.fullName = "Penny Andrews";
     
     expect(aPerson.getFirstName()).toBe(FILL_ME_IN);
     expect(aPerson.getLastName()).toBe(FILL_ME_IN);
     expect(aPerson.getFullName()).toBe(FILL_ME_IN);
 
-    aPerson.getFullName = function() {
+    aPerson.getFullName = function () {
       return aPerson.lastname + ", " + aPerson.firstname;
     };
     

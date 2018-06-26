@@ -1,5 +1,5 @@
 function Muppet(age, hobby) {
-  this.age   = age;
+  this.age = age;
   this.hobby = hobby; 
   
   this.answerNanny = function(){
@@ -20,7 +20,7 @@ SwedishChef.prototype = new Muppet();
 
 describe("About inheritance", function() {
   beforeEach(function(){
-    this.muppet      = new Muppet(2, "coding");
+    this.muppet = new Muppet(2, "coding");
   	this.swedishChef = new SwedishChef(2, "cooking", "chillin");
   });
   
@@ -58,12 +58,12 @@ function Gonzo(age, hobby, trick) {
   }
 }
 
-// no longer need to call the Muppet (base type) constructor
+//no longer need to call the Muppet (base type) constructor
 Gonzo.prototype = Muppet.prototype.beget();
-// note: if you're wondering how this line affects the below tests, the answer is that it doesn't.
-// however, it does do something interesting -- it makes this work:
-// var g = new Gonzo(...);
-// g instanceOf Muppet // true
+//note: if you're wondering how this line affects the below tests, the answer is that it doesn't.
+//however, it does do something interesting -- it makes this work:
+//  var g = new Gonzo(...);
+//  g instanceOf Muppet //true
 
 describe("About Crockford's inheritance improvement", function() {
   beforeEach(function(){
